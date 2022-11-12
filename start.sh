@@ -37,7 +37,7 @@ do
             echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
             ;;
         "update")
-            cd mccivilization-adminui-ssh && git pull && cd
+            cd mccivilization-adminui-ssh && sudo git pull && cd
             ;;
         "pwd")
             pwd
