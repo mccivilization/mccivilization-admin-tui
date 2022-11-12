@@ -39,6 +39,9 @@ do
         "update")
             cd mccivilization-adminui-ssh && git pull && cd
             ;;
+        "pwd")
+            pwd
+            ;;
         *)
             echo "Command not found"
             ;;
