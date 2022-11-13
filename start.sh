@@ -93,8 +93,9 @@ do
             read -p 'what config to edit? ' config
             if [ "$config" = "1" ]; then
                 sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
-            else
-                sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
+            fi
+            if [ "$config" = "0" ]; then
+                echo "canceled"
             fi
         ;;
         *)
