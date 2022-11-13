@@ -12,6 +12,8 @@ if [ "$ui" = "number" ]; then
     echo [stop] Stop server
     echo [restart] Restart server
     echo [status] Server status
+    echo [config] Edit server and plugins config
+    echo [console] Server console
     echo [help] Show this message
     echo [exit]/[quit] Exit
     while :
@@ -53,14 +55,17 @@ if [ "$ui" = "number" ]; then
             "uname")
                 uname -a
                 ;;
+            "console")
+                /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
+                ;;
             "config")
                 echo "Plugins: essentialsx"
                 echo "or entet cancel to cancel"
                 read -p 'what plugin?: [essentialsx] ' plugin
                 if [ "$plugin" = "essentialsx" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
+                    sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
                 else
-                    sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
+                    sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
                 fi
                 ;;
             *)
