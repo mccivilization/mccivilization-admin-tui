@@ -29,7 +29,11 @@ else
 fi
 while :
 do
-    read -p '> ' command
+    if [ "$ui" = "command" ]; then
+        read -p 'command: ' command
+    else
+        read -p 'number: ' command
+    fi
     case $command in
         "exit" | "quit" | "0")
             exit
