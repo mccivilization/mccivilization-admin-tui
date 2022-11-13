@@ -23,7 +23,7 @@ else
     echo [6] Server console
     echo [7] Show this message
     echo [0] Exit
-    $ui = "number"
+    ui="number"
 fi
 while :
 do
