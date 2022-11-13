@@ -29,10 +29,7 @@ while :
 do
     read -p '> ' command
     case $command in
-        "exit")
-            exit
-        ;;
-        "quit")
+        "exit" | "quit" | "0")
             exit
         ;;
         "help" | "7")
