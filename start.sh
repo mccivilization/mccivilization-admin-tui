@@ -57,10 +57,15 @@ do
             if [ $plugin -eq "essentialsx" ]
             then
                 sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml
+            else
+                echo "plugin not found"
             fi
             ;;
-        *)
+        )
             echo -n
+            ;;
+        *)
+            echo "Unknown command"
             ;;
     esac
 done
