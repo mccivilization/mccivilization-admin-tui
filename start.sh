@@ -107,6 +107,7 @@ do
             fi
         ;;
         "plugins" | "7")
+            echo "Plugins folder contains the following files:"
             sudo ls /home/filip/mccivilization/plugins
         ;;
         *)
