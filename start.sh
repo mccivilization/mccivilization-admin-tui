@@ -1,6 +1,11 @@
 #!/bin/bash
 clear
-running=true
+read -p 'Command or Number mode? [command]' ui
+echo
+
+if [ "$ui" = "number" ]; then
+echo "not implemented yet"
+else
 echo [start] Starting server
 echo [stop] Stop server
 echo [restart] Restart server
@@ -51,3 +56,4 @@ do
             ;;
     esac
 done
+fi
