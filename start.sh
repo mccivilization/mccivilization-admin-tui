@@ -107,8 +107,8 @@ do
             fi
         ;;
         "plugins" | "7")
-            echo "Plugins folder contains the following files:"
-            sudo ls /home/filip/mccivilization/plugins
+            echo "Plugins:"
+            sudo ls /home/filip/mccivilization/plugins | grep .jar
         ;;
         *)
             if [ "$ui" = "command" ]; then
