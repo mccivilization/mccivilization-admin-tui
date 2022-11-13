@@ -43,7 +43,7 @@ do
             pwd
             ;;
         *)
-            echo "Command not found"
+            echo -n
             ;;
     esac
 done
