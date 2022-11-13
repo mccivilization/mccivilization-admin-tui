@@ -42,6 +42,9 @@ do
         "pwd")
             pwd
             ;;
+        "uname")
+            uname -a
+            ;;
         *)
             echo -n
             ;;
