@@ -1,20 +1,11 @@
 #!/bin/bash
 clear
-read -p 'command or number mode? [command]' ui
+read -p 'command or number mode? [number]' ui
 echo
 if [ "$ui" = "update" ]; then
     sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 777 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
 fi
-if [ "$ui" = "number" ]; then
-    echo [1] Starting server
-    echo [2] Stop server
-    echo [3] Restart server
-    echo [4] Server status
-    echo [5] Edit server and plugins config
-    echo [6] Server console
-    echo [7] Show this message
-    echo [0] Exit
-else
+if [ "$ui" = "command" ]; then
     echo [start] Starting server
     echo [stop] Stop server
     echo [restart] Restart server
@@ -23,6 +14,16 @@ else
     echo [console] Server console
     echo [help] Show this message
     echo [exit]/[quit] Exit
+else
+    echo [1] Starting server
+    echo [2] Stop server
+    echo [3] Restart server
+    echo [4] Server status
+    echo [5] Edit server and plugins config
+    echo [6] Server console
+    echo [7] Show this message
+    echo [0] Exit
+    ui = "number"
 fi
 while :
 do
@@ -86,7 +87,7 @@ do
             echo [1] Essentials
             echo "Other options:"
             echo [0] Cancel
-            read -p 'what config to edit?' config
+            read -p 'what config to edit? ' config
             if [ "$config" = "1" ]; then
                 sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
             else
