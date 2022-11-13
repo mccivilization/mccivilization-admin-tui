@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-read -p 'Command or Number mode? [command]' ui
+read -p 'command or number mode? [command]' ui
 echo
 
 if [ "$ui" = "number" ]; then
@@ -50,6 +50,14 @@ do
             ;;
         "uname")
             uname -a
+            ;;
+        "config")
+            echo "Plugins: essentialsx"
+            read -p 'what plugin?: ' plugin
+            if [ $plugin -eq "essentialsx" ]
+            then
+                sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml
+            fi
             ;;
         *)
             echo -n
