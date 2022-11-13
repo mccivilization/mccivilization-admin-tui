@@ -107,7 +107,7 @@ do
             fi
         ;;
         "plugins" | "7")
-            echo "Plugins:"
+            sudo echo "Plugins:"
             sudo ls /home/filip/mccivilization/plugins | grep .jar
         ;;
         *)
