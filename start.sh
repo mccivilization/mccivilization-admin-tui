@@ -10,8 +10,9 @@ if [ "$ui" = "command" ]; then
     echo [stop] Stop server
     echo [restart] Restart server
     echo [status] Server status
-    echo [config] Edit server and plugins config
     echo [console] Server console
+    echo [config] Edit server and plugins config
+    echo [plugins] Show installed plugins
     echo [help] Show this message
     echo [exit]/[quit] Exit
 else
@@ -19,9 +20,10 @@ else
     echo [2] Stop server
     echo [3] Restart server
     echo [4] Server status
-    echo [5] Edit server and plugins config
-    echo [6] Server console
-    echo [7] Show this message
+    echo [5] Server console
+    echo [6] Edit server and plugins config
+    echo [7] Show installed plugins
+    echo [8] Show this message
     echo [0] Exit
     ui="number"
 fi
@@ -32,23 +34,25 @@ do
         "exit" | "quit" | "0")
             exit
         ;;
-        "help" | "7")
+        "help" | "8")
             if [ "$ui" = "number" ]; then
                 echo [1] Starting server
                 echo [2] Stop server
                 echo [3] Restart server
                 echo [4] Server status
-                echo [5] Edit server and plugins config
-                echo [6] Server console
-                echo [7] Show this message
+                echo [5] Server console
+                echo [6] Edit server and plugins config
+                echo [7] Show installed plugins
+                echo [8] Show this message
                 echo [0] Exit
             else
                 echo [start] Starting server
                 echo [stop] Stop server
                 echo [restart] Restart server
                 echo [status] Server status
-                echo [config] Edit server and plugins config
                 echo [console] Server console
+                echo [config] Edit server and plugins config
+                echo [plugins] Show installed plugins
                 echo [help] Show this message
                 echo [exit]/[quit] Exit
             fi
@@ -77,10 +81,10 @@ do
         "uname")
             uname -a
         ;;
-        "console" | "6")
+        "console" | "5")
             /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
         ;;
-        "config" | "5")
+        "config" | "6")
             echo "Server configs:"
             echo "Empty"
             echo "Plugins:"
@@ -94,6 +98,9 @@ do
             if [ "$config" = "0" ]; then
                 echo "canceled"
             fi
+        ;;
+        "plugins" | "7")
+            ls /home/filip/mccivilization/plugins
         ;;
         *)
             echo "Unknown command"
