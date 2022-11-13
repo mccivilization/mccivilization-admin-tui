@@ -2,7 +2,9 @@
 clear
 read -p 'command or number mode? [command]' ui
 echo
-
+if [ "$ui" = "update" ]; then
+    sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 777 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
+fi
 if [ "$ui" = "number" ]; then
     echo "not implemented yet"
     else
