@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 running=true
 echo [start] Starting server
 echo [stop] Stop server
