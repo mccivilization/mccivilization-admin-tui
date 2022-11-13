@@ -61,9 +61,6 @@ do
                 echo "plugin not found"
             fi
             ;;
-        "")
-            echo -n
-            ;;
         *)
             echo "Unknown command"
             ;;
