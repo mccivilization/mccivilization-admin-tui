@@ -35,7 +35,7 @@ do
         "quit")
             exit
         ;;
-        "help")
+        "help" | "7")
             if [ "$ui" = "number" ]; then
                 echo [1] Starting server
                 echo [2] Stop server
