@@ -36,7 +36,7 @@ do
             exit
         ;;
         "help")
-            if [ "$uid" = "number" ]; then
+            if [ "$ui" = "number" ]; then
                 echo [1] Starting server
                 echo [2] Stop server
                 echo [3] Restart server
