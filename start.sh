@@ -100,7 +100,7 @@ do
             fi
         ;;
         "plugins" | "7")
-            ls /home/filip/mccivilization/plugins
+            sudo ls /home/filip/mccivilization/plugins
         ;;
         *)
             echo "Unknown command"
