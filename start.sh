@@ -110,7 +110,11 @@ do
             sudo ls /home/filip/mccivilization/plugins
         ;;
         *)
-            echo "Unknown command"
+            if [ "$ui" = "command" ]; then
+                echo "Unknown command"
+            else
+                echo "Unknown number"
+            fi
         ;;
     esac
 done
