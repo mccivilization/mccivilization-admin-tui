@@ -74,6 +74,9 @@ do
         "pwd")
             pwd
         ;;
+        "cls" | "clear")
+            clear
+        ;;
         "uname")
             uname -a
         ;;
