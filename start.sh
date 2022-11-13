@@ -80,10 +80,14 @@ do
             /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
         ;;
         "config" | "5")
-            echo "Plugins: essentialsx"
-            echo "or entet cancel to cancel"
-            read -p 'what plugin?: [essentialsx] ' plugin
-            if [ "$plugin" = "essentialsx" ]; then
+            echo "Server configs:"
+            echo "Empty"
+            echo "Plugins:"
+            echo [1] Essentials
+            echo "Other options:"
+            echo [0] Cancel
+            read -p 'what config to edit?' config
+            if [ "$config" = "1" ]; then
                 sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
             else
                 sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
