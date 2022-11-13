@@ -3,7 +3,7 @@ clear
 read -p 'command or number mode? [number]' ui
 echo
 if [ "$ui" = "update" ]; then
-    sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 777 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
+    sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
 fi
 if [ "$ui" = "command" ]; then
     echo [start] Starting server
@@ -70,7 +70,7 @@ do
             echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
         ;;
         "update")
-            sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 777 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
+            sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
         ;;
         "pwd")
             pwd
@@ -80,6 +80,9 @@ do
         ;;
         "uname")
             uname -a
+        ;;
+        "top")
+            top
         ;;
         "console" | "5")
             /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
@@ -93,7 +96,7 @@ do
             echo [0] Cancel
             read -p 'what config to edit? ' config
             if [ "$config" = "1" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
+                sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml && nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 664 /home/filip/mccivilization/plugins/Essentials/config.yml
             fi
             if [ "$config" = "0" ]; then
                 echo "canceled"
