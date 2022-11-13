@@ -54,17 +54,12 @@ do
         "config")
             echo "Plugins: essentialsx"
             echo "or entet cancel to cancel"
-            read -p 'what plugin?: ' plugin
-            case $plugin in
-                "essentialsx")
-                    sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
-                    ;;
-                "cancel")
-                    echo "canceled"
-                    ;;
-                *) 
-                    echo "plugin not found"
-                    ;;
+            read -p 'what plugin?: [essentialsx] ' plugin
+            if [ "$plugin" = "essentialsx" ]; then
+                sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
+            else
+                sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml
+            fi
             ;;
         *)
             echo "Unknown command"
