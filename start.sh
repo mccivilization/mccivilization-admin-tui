@@ -68,6 +68,7 @@ do
             sudo systemctl stop mccivilization && echo "Server stopped" && read -p 'Press ENTER to close this message' $null
         ;;
         "status" | "4")
+            clear
             sudo systemctl status mccivilization && read -p 'Press ENTER to close this message' $null
         ;;
         "restart" | "3")
