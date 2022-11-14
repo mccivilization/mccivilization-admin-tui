@@ -1,7 +1,6 @@
 #!/bin/bash
-if [ "$ui" = "number" ]; then
-                clear
-            fi
+clear
+ui = "number"
             echo "Server configs:"
             echo "Empty"
             echo "Plugins:"
