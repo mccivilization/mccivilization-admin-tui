@@ -71,10 +71,16 @@ do
             if [ "$ui" = "number" ]; then
                 clear
             fi
-            sudo systemctl status mccivilization && read -p 'Press ENTER to close this message' $null
+            sudo systemctl status mccivilization
+            if [ "$ui" = "number" ]; then
+                read -p 'Press ENTER to close this message' $null
+            fi
         ;;
         "restart" | "3")
-            echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted" && read -p 'Press ENTER to close this message' $null
+            echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
+            if [ "$ui" = "number" ]; then
+                read -p 'Press ENTER to close this message' $null
+            fi
         ;;
         "update")
             sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
@@ -83,16 +89,22 @@ do
             if [ "$ui" = "number" ]; then
                 clear
             fi
-            pwd && read -p 'Press ENTER to close this message' $null
+            pwd
+            if [ "$ui" = "number" ]; then
+                read -p 'Press ENTER to close this message' $null
+            fi
         ;;
         "cls" | "clear")
-            clear && read -p 'Press ENTER to close this message' $null
+            clear
         ;;
         "uname")
             if [ "$ui" = "number" ]; then
                 clear
             fi
-            uname -a && read -p 'Press ENTER to close this message' $null
+            uname -a
+            if [ "$ui" = "number" ]; then
+                read -p 'Press ENTER to close this message' $null
+            fi
         ;;
         "top")
             top
@@ -123,7 +135,10 @@ do
                 clear
             fi
             sudo echo "Plugins:"
-            sudo ls /home/filip/mccivilization/plugins | grep .jar && read -p 'Press ENTER to close this message' $null
+            sudo ls /home/filip/mccivilization/plugins | grep .jar
+            if [ "$ui" = "number" ]; then
+                read -p 'Press ENTER to close this message' $null
+            fi
         ;;
         *)
             if [ "$ui" = "command" ]; then
