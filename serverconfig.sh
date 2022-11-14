@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-ui = "number"
+ui="number"
             echo "Server configs:"
             echo "Empty"
             echo "Plugins:"
