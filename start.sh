@@ -119,19 +119,28 @@ do
             echo "Server configs:"
             echo "Empty"
             echo "Plugins:"
-            echo [1] Essentials
+            echo [1] EssentialsX
             echo [2] Multiverse-Core
+            echo [3] Multiverse-
+            echo [4] Multiverse-
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
             if [ "$config" = "1" ]; then
-                sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml && sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 664 /home/filip/mccivilization/plugins/Essentials/config.yml
-            fi
-            if [ "$config" = "2" ]; then
-                sudo chmod 777 /home/filip/mccivilization/plugins/Multiverse-Core/config.yml && sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml && sudo chmod 664 /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
-            fi
+                sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml
+            elif [ "$config" = "2" ]; then
+                sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
+            
+            if [ "$config" = "3" ]; then
+                sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
+            
+            if [ "$config" = "4" ]; then
+                sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
+            
             if [ "$config" = "0" ]; then
                 echo "canceled"
+            else
+                echo "Invalid option, canceling..."
             fi
         ;;
         "plugins" | "7")
