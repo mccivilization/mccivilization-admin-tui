@@ -68,7 +68,9 @@ do
             sudo systemctl stop mccivilization && echo "Server stopped" && read -p 'Press ENTER to close this message' $null
         ;;
         "status" | "4")
-            clear
+            if [ "$ui" = "number" ]; then
+                clear
+            fi
             sudo systemctl status mccivilization && read -p 'Press ENTER to close this message' $null
         ;;
         "restart" | "3")
@@ -78,12 +80,18 @@ do
             sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
         ;;
         "pwd")
+            if [ "$ui" = "number" ]; then
+                clear
+            fi
             pwd && read -p 'Press ENTER to close this message' $null
         ;;
         "cls" | "clear")
             clear && read -p 'Press ENTER to close this message' $null
         ;;
         "uname")
+            if [ "$ui" = "number" ]; then
+                clear
+            fi
             uname -a && read -p 'Press ENTER to close this message' $null
         ;;
         "top")
@@ -93,7 +101,9 @@ do
             /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
         ;;
         "config" | "6")
-            clear
+            if [ "$ui" = "number" ]; then
+                clear
+            fi
             echo "Server configs:"
             echo "Empty"
             echo "Plugins:"
@@ -109,7 +119,9 @@ do
             fi
         ;;
         "plugins" | "7")
-            clear
+            if [ "$ui" = "number" ]; then
+                clear
+            fi
             sudo echo "Plugins:"
             sudo ls /home/filip/mccivilization/plugins | grep .jar && read -p 'Press ENTER to close this message' $null
         ;;
