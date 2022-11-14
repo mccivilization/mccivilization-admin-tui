@@ -93,6 +93,7 @@ do
             /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
         ;;
         "config" | "6")
+            clear
             echo "Server configs:"
             echo "Empty"
             echo "Plugins:"
