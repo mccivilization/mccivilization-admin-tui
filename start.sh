@@ -120,11 +120,15 @@ do
             echo "Empty"
             echo "Plugins:"
             echo [1] Essentials
+            echo [2] Multiverse-Core
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
             if [ "$config" = "1" ]; then
                 sudo chmod 777 /home/filip/mccivilization/plugins/Essentials/config.yml && sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml && sudo chmod 664 /home/filip/mccivilization/plugins/Essentials/config.yml
+            fi
+            if [ "$config" = "2" ]; then
+                sudo chmod 777 /home/filip/mccivilization/plugins/Multiverse-Core/config.yml && sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml && sudo chmod 664 /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
             fi
             if [ "$config" = "0" ]; then
                 echo "canceled"
