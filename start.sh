@@ -23,6 +23,7 @@ do
     if [ "$ui" = "command" ]; then
         read -p '>: ' command
     else
+        clear
         echo [1] Starting server
         echo [2] Stop server
         echo [3] Restart server
@@ -32,7 +33,6 @@ do
         echo [7] Show installed plugins
         echo [0] Exit
         read -p 'number: ' command
-        clear
     fi
     case $command in
         "exit" | "quit" | "0")
@@ -48,6 +48,7 @@ do
                 echo [6] Edit server and plugins config
                 echo [7] Show installed plugins
                 echo [0] Exit
+                read -p 'Press ENTER to close this message' $null
             else
                 echo [start] Starting server
                 echo [stop] Stop server
@@ -61,28 +62,28 @@ do
             fi
         ;;
         "start" | "1")
-            sudo systemctl start mccivilization && echo "Server started"
+            sudo systemctl start mccivilization && echo "Server started" && read -p 'Press ENTER to close this message' $null
         ;;
         "stop" | "2")
-            sudo systemctl stop mccivilization && echo "Server stopped"
+            sudo systemctl stop mccivilization && echo "Server stopped" && read -p 'Press ENTER to close this message' $null
         ;;
         "status" | "4")
-            sudo systemctl status mccivilization
+            sudo systemctl status mccivilization && read -p 'Press ENTER to close this message' $null
         ;;
         "restart" | "3")
-            echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
+            echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted" && read -p 'Press ENTER to close this message' $null
         ;;
         "update")
             sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
         ;;
         "pwd")
-            pwd
+            pwd && read -p 'Press ENTER to close this message' $null
         ;;
         "cls" | "clear")
-            clear
+            clear && read -p 'Press ENTER to close this message' $null
         ;;
         "uname")
-            uname -a
+            uname -a && read -p 'Press ENTER to close this message' $null
         ;;
         "top")
             top
@@ -107,7 +108,7 @@ do
         ;;
         "plugins" | "7")
             sudo echo "Plugins:"
-            sudo ls /home/filip/mccivilization/plugins | grep .jar
+            sudo ls /home/filip/mccivilization/plugins | grep .jar && read -p 'Press ENTER to close this message' $null
         ;;
         *)
             if [ "$ui" = "command" ]; then
