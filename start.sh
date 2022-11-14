@@ -21,7 +21,7 @@ fi
 while :
 do
     if [ "$ui" = "command" ]; then
-        read -p '>: ' command
+        read -p '> ' command
     else
         clear
         echo [1] Starting server
