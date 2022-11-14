@@ -140,7 +140,7 @@ do
                 read -p "which file? " configFile
                 if [ "$configFile" = "1" ]
                     sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
-                elif [ "$configFile" = "2" ]
+                else if [ "$configFile" = "2" ]
                     sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/worlds.yml
                 elif [ "$configFile" = "0" ]
                     echo "canceled"
