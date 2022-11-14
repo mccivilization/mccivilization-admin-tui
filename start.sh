@@ -23,7 +23,6 @@ do
     if [ "$ui" = "command" ]; then
         read -p '>: ' command
     else
-        clear
         echo [1] Starting server
         echo [2] Stop server
         echo [3] Restart server
@@ -33,6 +32,7 @@ do
         echo [7] Show installed plugins
         echo [0] Exit
         read -p 'number: ' command
+        clear
     fi
     case $command in
         "exit" | "quit" | "0")
