@@ -16,29 +16,29 @@ if [ "$ui" = "command" ]; then
     echo [help] Show this message
     echo [exit]/[quit] Exit
 else
-    echo [1] Starting server
-    echo [2] Stop server
-    echo [3] Restart server
-    echo [4] Server status
-    echo [5] Server console
-    echo [6] Edit server and plugins config
-    echo [7] Show installed plugins
-    echo [8] Show this message
-    echo [0] Exit
     ui="number"
 fi
 while :
 do
     if [ "$ui" = "command" ]; then
-        read -p 'command: ' command
+        read -p '>: ' command
     else
+        clear
+        echo [1] Starting server
+        echo [2] Stop server
+        echo [3] Restart server
+        echo [4] Server status
+        echo [5] Server console
+        echo [6] Edit server and plugins config
+        echo [7] Show installed plugins
+        echo [0] Exit
         read -p 'number: ' command
     fi
     case $command in
         "exit" | "quit" | "0")
             exit
         ;;
-        "help" | "8")
+        "help")
             if [ "$ui" = "number" ]; then
                 echo [1] Starting server
                 echo [2] Stop server
@@ -47,7 +47,6 @@ do
                 echo [5] Server console
                 echo [6] Edit server and plugins config
                 echo [7] Show installed plugins
-                echo [8] Show this message
                 echo [0] Exit
             else
                 echo [start] Starting server
