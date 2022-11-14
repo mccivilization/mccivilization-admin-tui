@@ -107,6 +107,7 @@ do
             fi
         ;;
         "plugins" | "7")
+            clear
             sudo echo "Plugins:"
             sudo ls /home/filip/mccivilization/plugins | grep .jar && read -p 'Press ENTER to close this message' $null
         ;;
