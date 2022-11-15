@@ -139,10 +139,10 @@ do
                 if [ "$configFile" = "1" ]; then
                     sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
                 fi
-                if [ "$configFile" = "2" ]
+                if [ "$configFile" = "2" ]; then
                     sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/worlds.yml
                 fi
-                if [ "$configFile" = "0" ]
+                if [ "$configFile" = "0" ]; then
                     echo "canceled"
                 fi
             fi
