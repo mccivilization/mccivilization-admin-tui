@@ -121,6 +121,7 @@ do
             echo [2] Multiverse-Core
             echo [3] Multiverse-Inventories
             echo [4] Multiverse-Portals
+            echo [5] TAB
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -201,6 +202,48 @@ do
                     echo "canceled"
                 fi
             fi
+
+            #TAB
+            if [ "$config" = "5" ]; then
+                clear
+                if [ "$ui" = "number" ]; then
+                    clear
+                else
+                    echo
+                fi
+                echo [1] "./TAB/animations.yml"
+                echo [2] "./TAB/config.yml"
+                echo [3] "./TAB/groups.yml"
+                echo [4] "./TAB/layout.yml"
+                echo [5] "./TAB/messages.yml"
+                echo [6] "./TAB/users.yml"
+
+                echo [0] "cancel"
+                read -p "which file? " configFile
+                if [ "$configFile" = "1" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/TAB/animations.yml
+                fi
+                if [ "$configFile" = "2" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/TAB/config.yml
+                fi
+                if [ "$configFile" = "3" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/TAB/groups.yml
+                fi
+                if [ "$configFile" = "4" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/TAB/layout.yml
+                fi
+                if [ "$configFile" = "5" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/TAB/messages.yml
+                fi
+                if [ "$configFile" = "6" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/TAB/users.yml
+                fi
+                if [ "$configFile" = "0" ]; then
+                    echo "canceled"
+                fi
+            fi
+
+            #cancel
             if [ "$config" = "0" ]; then
                 echo canceled
             fi
