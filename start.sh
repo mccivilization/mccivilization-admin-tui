@@ -113,6 +113,7 @@ do
             /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
         ;;
         "config" | "6")
+            clear
             echo "Server configs:"
             echo "Empty"
             echo "Plugins:"
@@ -131,6 +132,7 @@ do
 
             #Multiverse-Core
             if [ "$config" = "2" ]; then
+                clear
                 if [ "$ui" = "number" ]; then
                     clear
                 else
@@ -153,6 +155,7 @@ do
 
             #Multiverse-Inventories
             if [ "$config" = "3" ]; then
+                clear
                 if [ "$ui" = "number" ]; then
                     clear
                 else
@@ -177,7 +180,8 @@ do
             fi
 
             #Multiverse-Portals
-            if [ "$config" = "3" ]; then
+            if [ "$config" = "4" ]; then
+                clear
                 if [ "$ui" = "number" ]; then
                     clear
                 else
