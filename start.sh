@@ -113,7 +113,39 @@ do
             /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
         ;;
         "config" | "6")
-            sh ./mccivilization-adminui-ssh/serverconfig.sh
+            echo "Server configs:"
+            echo "Empty"
+            echo "Plugins:"
+            echo [1] EssentialsX
+            echo [2] Multiverse-Core
+            #echo [3] Multiverse-
+            #echo [4] Multiverse-
+            echo "Other options:"
+            echo [0] Cancel
+            read -p 'what config to edit? ' config
+            if [ "$config" = "1" ]; then
+                sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml
+            fi
+            if [ "$config" = "2" ]; then
+                if [ "$ui" = "number" ]; then
+                    clear
+                else
+                    echo
+                fi
+                echo [1] "./Multiverse-Core/config.yml"
+                echo [2] "./Multiverse-Core/worlds.yml"
+                echo [0] "cancel"
+                read -p "which file? " configFile
+                if [ "$configFile" = "1" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
+                fi
+                if [ "$configFile" = "2" ]
+                    sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/worlds.yml
+                fi
+                if [ "$configFile" = "0" ]
+                    echo "canceled"
+                fi
+            fi
         ;;
         "plugins" | "7")
             if [ "$ui" = "number" ]; then
