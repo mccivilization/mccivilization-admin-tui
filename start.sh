@@ -118,14 +118,18 @@ do
             echo "Plugins:"
             echo [1] EssentialsX
             echo [2] Multiverse-Core
-            #echo [3] Multiverse-
-            #echo [4] Multiverse-
+            echo [3] Multiverse-Inventories
+            echo [4] Multiverse-Portals
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
+
+            #EssentialsX
             if [ "$config" = "1" ]; then
                 sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml
             fi
+
+            #Multiverse-Core
             if [ "$config" = "2" ]; then
                 if [ "$ui" = "number" ]; then
                     clear
@@ -145,6 +149,56 @@ do
                 if [ "$configFile" = "0" ]; then
                     echo "canceled"
                 fi
+            fi
+
+            #Multiverse-Inventories
+            if [ "$config" = "3" ]; then
+                if [ "$ui" = "number" ]; then
+                    clear
+                else
+                    echo
+                fi
+                echo [1] "./Multiverse-Inventories/config.yml"
+                echo [2] "./Multiverse-Inventories/groups.yml"
+                echo [0] "cancel"
+                read -p "which file? " configFile
+                if [ "$configFile" = "1" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Multiverse-Inventories/config.yml
+                fi
+                if [ "$configFile" = "2" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Multiverse-Inventories/groups.yml
+                fi
+                if [ "$configFile" = "0" ]; then
+                    echo "canceled"
+                fi
+            fi
+            if [ "$config" = "0" ]; then
+                echo canceled
+            fi
+
+            #Multiverse-Portals
+            if [ "$config" = "3" ]; then
+                if [ "$ui" = "number" ]; then
+                    clear
+                else
+                    echo
+                fi
+                echo [1] "./Multiverse-Portals/config.yml"
+                echo [2] "./Multiverse-Portals/portals.yml"
+                echo [0] "cancel"
+                read -p "which file? " configFile
+                if [ "$configFile" = "1" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Multiverse-Portals/config.yml
+                fi
+                if [ "$configFile" = "2" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Multiverse-Portals/portals.yml
+                fi
+                if [ "$configFile" = "0" ]; then
+                    echo "canceled"
+                fi
+            fi
+            if [ "$config" = "0" ]; then
+                echo canceled
             fi
         ;;
         "plugins" | "7")
