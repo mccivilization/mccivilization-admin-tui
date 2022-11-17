@@ -242,8 +242,9 @@ do
                 if [ "$configFile" = "0" ]; then
                     echo "canceled"
                 fi
+            fi
 
-                #AuthMe
+            #AuthMe
             if [ "$config" = "6" ]; then
                 clear
                 if [ "$ui" = "number" ]; then
@@ -260,8 +261,8 @@ do
                 echo [7] "./AuthMe/spawn.yml"
                 echo [8] "./AuthMe/verification_code_email.html"
                 echo [9] "./AuthMe/welcome.txt"
-                echo [0] "cancel"
 
+                echo [0] "cancel"
                 read -p "which file? " configFile
                 if [ "$configFile" = "1" ]; then
                     sudo nano /home/filip/mccivilization/plugins/AuthMe/commands.yml
