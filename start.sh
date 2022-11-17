@@ -122,6 +122,7 @@ do
             echo [3] Multiverse-Inventories
             echo [4] Multiverse-Portals
             echo [5] TAB
+            echo [6] AuthMe
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -237,6 +238,57 @@ do
                 fi
                 if [ "$configFile" = "6" ]; then
                     sudo nano /home/filip/mccivilization/plugins/TAB/users.yml
+                fi
+                if [ "$configFile" = "0" ]; then
+                    echo "canceled"
+                fi
+
+                #AuthMe
+            if [ "$config" = "6" ]; then
+                clear
+                if [ "$ui" = "number" ]; then
+                    clear
+                else
+                    echo
+                fi
+                echo [1] "./AuthMe/commands.yml"
+                echo [2] "./AuthMe/config.yml"
+                echo [3] "./AuthMe/email.html"
+                echo [4] "./AuthMe/messages/help_en.yml"
+                echo [5] "./AuthMe/messages/messages_en.yml"
+                echo [6] "./AuthMe/recovery_code_email.html"
+                echo [7] "./AuthMe/spawn.yml"
+                echo [8] "./AuthMe/verification_code_email.html"
+                echo [9] "./AuthMe/welcome.txt"
+                echo [0] "cancel"
+
+                read -p "which file? " configFile
+                if [ "$configFile" = "1" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/commands.yml
+                fi
+                if [ "$configFile" = "2" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/config.yml
+                fi
+                if [ "$configFile" = "3" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/email.html
+                fi
+                if [ "$configFile" = "4" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/messages/help_en.yml
+                fi
+                if [ "$configFile" = "5" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/messages/messages_en.yml
+                fi
+                if [ "$configFile" = "6" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/recovery_code_email.html
+                fi
+                if [ "$configFile" = "7" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/spawn.yml
+                fi
+                if [ "$configFile" = "8" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/verification_code_email.html
+                fi
+                if [ "$configFile" = "9" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/AuthMe/welcome.txt
                 fi
                 if [ "$configFile" = "0" ]; then
                     echo "canceled"
