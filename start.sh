@@ -123,6 +123,7 @@ do
             echo [4] Multiverse-Portals
             echo [5] TAB
             echo [6] AuthMe
+            echo [7] Citizens
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -293,6 +294,31 @@ do
                 fi
                 if [ "$configFile" = "0" ]; then
                     echo "canceled"
+                fi
+            fi
+
+            #Citizens
+            if [ "$config" = "7" ]; then
+                clear
+                if [ "$ui" = "number" ]; then
+                    clear
+                else
+                    echo
+                fi
+                echo [1] "./Citizens/config.yml"
+                echo [2] "./Citizens/saves.yml"
+                echo [3] "./Citizens/shops.yml"
+
+                echo [0] "cancel"
+                read -p "which file? " configFile
+                if [ "$configFile" = "1" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Citizens/config.yml
+                fi
+                if [ "$configFile" = "2" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Citizens/saves.yml
+                fi
+                if [ "$configFile" = "3" ]; then
+                    sudo nano /home/filip/mccivilization/plugins/Citizens/shops.yml
                 fi
             fi
 
