@@ -373,13 +373,13 @@ do
                 echo [0] "cancel"
                 read -p "which file? " configFile
                 if [ "$configFile" = "1" ]; then
-                    sudo nano /home/filip/mccivilization/ItemJoin/RTP/config.yml
+                    sudo nano /home/filip/mccivilization/plugins/ItemJoin/config.yml
                 fi
                 if [ "$configFile" = "2" ]; then
-                    sudo nano /home/filip/mccivilization/ItemJoin/RTP/en-lang.yml
+                    sudo nano /home/filip/mccivilization/plugins/ItemJoin/en-lang.yml
                 fi
                 if [ "$configFile" = "3" ]; then
-                    sudo nano /home/filip/mccivilization/ItemJoin/RTP/items.yml
+                    sudo nano /home/filip/mccivilization/plugins/ItemJoin/items.yml
                 fi
                 if [ "$configFile" = "0" ]; then
                     echo "canceled"
