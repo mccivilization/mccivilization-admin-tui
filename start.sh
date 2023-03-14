@@ -390,7 +390,7 @@ do
             #BetterRTP
             if [ "$config" = "10" ]; then
                 clear
-                sudo ls -l /home/filip/mccivilization/plugins/BetterRTP/ | grep .yml
+                sudo ls /home/filip/mccivilization/plugins/BetterRTP/ | grep .yml
                 read -p "which file? " configFile
                 if [ "$configFile" = "" ]; then
                     echo canceled
