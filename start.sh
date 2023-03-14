@@ -126,6 +126,7 @@ do
             echo [7] Citizens
             echo [8] RTP
             echo [9] ItemJoin
+            echo [10] BetterRTP
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -383,6 +384,18 @@ do
                 fi
                 if [ "$configFile" = "0" ]; then
                     echo "canceled"
+                fi
+            fi
+
+            #BetterRTP
+            if [ "$config" = "10" ]; then
+                clear
+                sudo ls -l /home/filip/mccivilization/plugins/BetterRTP/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/BetterRTP/$configFile
                 fi
             fi
 
