@@ -124,7 +124,7 @@ do
             echo [5] TAB
             echo [6] AuthMe
             echo [7] Citizens
-            echo [8] RTP
+            echo [8] Residence
             echo [9] ItemJoin
             echo [10] BetterRTP
             echo "Other options:"
@@ -325,38 +325,15 @@ do
                 fi
             fi
 
-            #RTP
+            #Residence
             if [ "$config" = "8" ]; then
                 clear
-                if [ "$ui" = "number" ]; then
-                    clear
-                else
-                    echo
-                fi
-                echo [1] "./RTP/config.yml"
-                echo [2] "./RTP/lang.yml"
-                echo [3] "./RTP/playerCooldowns.dat"
-                echo [4] "./RTP/regions.yml"
-                echo [5] "./RTP/worlds.yml"
-                echo [0] "cancel"
+                sudo ls /home/filip/mccivilization/plugins/Residence/ | grep .yml
                 read -p "which file? " configFile
-                if [ "$configFile" = "1" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/RTP/config.yml
-                fi
-                if [ "$configFile" = "2" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/RTP/lang.yml
-                fi
-                if [ "$configFile" = "3" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/RTP/playerCooldowns.dat
-                fi
-                if [ "$configFile" = "4" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/RTP/regions.yml
-                fi
-                if [ "$configFile" = "5" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/RTP/worlds.yml
-                fi
-                if [ "$configFile" = "0" ]; then
-                    echo "canceled"
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/Residence/$configFile
                 fi
             fi
 
