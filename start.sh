@@ -114,8 +114,6 @@ do
         ;;
         "config" | "6")
             clear
-            echo "Server configs:"
-            echo "Empty"
             echo "Plugins:"
             echo [1] EssentialsX
             echo [2] Multiverse-Core
@@ -127,6 +125,7 @@ do
             echo [8] Residence
             echo [9] ItemJoin
             echo [10] BetterRTP
+            echo [11] GWarp
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -373,6 +372,18 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/BetterRTP/$configFile
+                fi
+            fi
+
+            #GWarp
+            if [ "$config" = "11" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/GWarp/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/GWarp/$configFile
                 fi
             fi
 
