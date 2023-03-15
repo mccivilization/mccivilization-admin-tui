@@ -128,6 +128,7 @@ do
             echo [11] GWarp
             echo [12] Jobs
             echo [13] EzChestShop
+            echo [14] Quests
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -410,6 +411,18 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/EzChestShop/$configFile
+                fi
+            fi
+
+            #Quests
+            if [ "$config" = "14" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/Quests/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/Quests/$configFile
                 fi
             fi
 
