@@ -126,6 +126,8 @@ do
             echo [9] ItemJoin
             echo [10] BetterRTP
             echo [11] GWarp
+            echo [12] Jobs
+            echo [13] EzChestShop
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -384,6 +386,30 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/GWarp/$configFile
+                fi
+            fi
+
+            #Jobs
+            if [ "$config" = "12" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/Jobs/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/Jobs/$configFile
+                fi
+            fi
+
+            #EzChestShop
+            if [ "$config" = "13" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/EzChestShop/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/EzChestShop/$configFile
                 fi
             fi
 
