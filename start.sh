@@ -129,6 +129,7 @@ do
             echo [12] Jobs
             echo [13] EzChestShop
             echo [14] Quests
+            echo [15] DeadChest
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -423,6 +424,18 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/Quests/$configFile
+                fi
+            fi
+
+            #DeadChest
+            if [ "$config" = "15" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/DeadChest/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/DeadChest/$configFile
                 fi
             fi
 
