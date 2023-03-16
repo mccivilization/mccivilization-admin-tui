@@ -394,7 +394,7 @@ do
             #Jobs
             if [ "$config" = "12" ]; then
                 clear
-                sudo ls /home/filip/mccivilization/plugins/Jobs/ | grep .yml
+                sudo ls -R /home/filip/mccivilization/plugins/Jobs/ | grep .yml
                 read -p "which file? " configFile
                 if [ "$configFile" = "" ]; then
                     echo canceled
