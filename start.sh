@@ -130,6 +130,7 @@ do
             echo [13] EzChestShop
             echo [14] Quests
             echo [15] DeadChest
+            echo [16] SimpleScore
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -436,6 +437,18 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/DeadChest/$configFile
+                fi
+            fi
+
+            #SimpleScore
+            if [ "$config" = "16" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/SimpleScore/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/SimpleScore/$configFile
                 fi
             fi
 
