@@ -131,6 +131,8 @@ do
             echo [14] Quests
             echo [15] DeadChest
             echo [16] SimpleScore
+            echo [17] Votifier
+            echo [18] VotingPlugin
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -449,6 +451,30 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/SimpleScore/$configFile
+                fi
+            fi
+
+            #Votifier
+            if [ "$config" = "17" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/Votifier/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/Votifier/$configFile
+                fi
+            fi
+
+            #VotingPlugin
+            if [ "$config" = "18" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/VotingPlugin/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/VotingPlugin/$configFile
                 fi
             fi
 
