@@ -133,6 +133,7 @@ do
             echo [16] SimpleScore
             echo [17] Votifier
             echo [18] VotingPlugin
+            echo [19] AutoMessage
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -475,6 +476,18 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/VotingPlugin/$configFile
+                fi
+            fi
+
+            #AutoMessage
+            if [ "$config" = "19" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/AutoMessage/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/AutoMessage/$configFile
                 fi
             fi
 
