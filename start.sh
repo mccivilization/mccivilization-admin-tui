@@ -134,6 +134,7 @@ do
             echo [17] Votifier
             echo [18] VotingPlugin
             echo [19] AutoMessage
+            echo [20] ajLeaderboards
             echo "Other options:"
             echo [0] Cancel
             read -p 'what config to edit? ' config
@@ -347,27 +348,12 @@ do
             #ItemJoin
             if [ "$config" = "9" ]; then
                 clear
-                if [ "$ui" = "number" ]; then
-                    clear
-                else
-                    echo
-                fi
-                echo [1] "./ItemJoin/config.yml"
-                echo [2] "./ItemJoin/en-lang.yml"
-                echo [3] "./ItemJoin/items.yml"
-                echo [0] "cancel"
+                sudo ls /home/filip/mccivilization/plugins/ItemJoin/ | grep .yml
                 read -p "which file? " configFile
-                if [ "$configFile" = "1" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/ItemJoin/config.yml
-                fi
-                if [ "$configFile" = "2" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/ItemJoin/en-lang.yml
-                fi
-                if [ "$configFile" = "3" ]; then
-                    sudo nano /home/filip/mccivilization/plugins/ItemJoin/items.yml
-                fi
-                if [ "$configFile" = "0" ]; then
-                    echo "canceled"
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/ItemJoin/$configFile
                 fi
             fi
 
@@ -488,6 +474,18 @@ do
                     echo canceled
                 else
                     sudo nano /home/filip/mccivilization/plugins/AutoMessage/$configFile
+                fi
+            fi
+
+            #ajLeaderboards
+            if [ "$config" = "20" ]; then
+                clear
+                sudo ls /home/filip/mccivilization/plugins/ajLeaderboards/ | grep .yml
+                read -p "which file? " configFile
+                if [ "$configFile" = "" ]; then
+                    echo canceled
+                else
+                    sudo nano /home/filip/mccivilization/plugins/ajLeaderboards/$configFile
                 fi
             fi
 
