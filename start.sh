@@ -11,11 +11,20 @@ clear
 
 # autoupdate
 
-REMOTE_CONTENT=$(curl -s "$updateServerVer")
-LOCAL_CONTENT=$(cat "$localServerVer")
+echo "Checking for new updates"
+REMOTE_CONTENT=$(timeout 10 curl -s "$updateServerVer")
+RC=$?
 
-if (( $(echo "$REMOTE_CONTENT") > $(echo "$LOCAL_CONTENT") )); then
-  echo "Update available"
+if [[ $RC -eq 0 ]]; then
+  LOCAL_CONTENT=$(cat "$localServerVer")
+
+  if (( $(echo "$REMOTE_CONTENT") > $(echo "$LOCAL_CONTENT") )); then
+    echo "Update available"
+    echo "Updating"
+    sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
+  fi
+else
+  echo "Error: Timeout occurred while fetching remote content."
 fi
 
 # main while
