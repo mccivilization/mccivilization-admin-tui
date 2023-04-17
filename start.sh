@@ -34,8 +34,10 @@ while :; do
         exit
         ;;
     "ver" | "version")
+        echo
         echo -n "Version: "
         cat $localServerVer
+        echo
         echo
         ;;
     "start" | "1")
