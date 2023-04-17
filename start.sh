@@ -17,9 +17,11 @@ while :; do
         ;;
     "start" | "1")
         sudo systemctl start mccivilization && echo "Server started" && read -p 'Press ENTER to close this message' $null
+        clear
         ;;
     "stop" | "2")
         sudo systemctl stop mccivilization && echo "Server stopped" && read -p 'Press ENTER to close this message' $null
+        clear
         ;;
     "status" | "4")
         clear
