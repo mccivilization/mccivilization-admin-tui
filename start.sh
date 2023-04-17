@@ -12,11 +12,9 @@ clear
 # autoupdate
 
 REMOTE_CONTENT=$(curl -s "$updateServerVer")
-echo $REMOTE_CONTENT
 LOCAL_CONTENT=$(cat "$localServerVer")
-echo $LOCAL_CONTENT
 
-if [ "$REMOTE_CONTENT" != "$LOCAL_CONTENT" ]; then
+if (( $(echo "$REMOTE_CONTENT") > $(echo "$LOCAL_CONTENT") )); then
   echo "Update available"
 fi
 
