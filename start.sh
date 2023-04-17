@@ -1,4 +1,23 @@
 #!/bin/bash
+
+# config
+
+updateServer="https://github.com/filip2cz/mccivilization-adminui-ssh.git"
+updateServerVer="https://raw.githubusercontent.com/filip2cz/mccivilization-adminui-ssh/main/version"
+localServerVer="~/mccivilization-adminui-ssh/version"
+
+# code
+
+# autoupdate
+
+REMOTE_CONTENT=$(curl -s "$updateServerVer")
+LOCAL_CONTENT=$(cat "$localServerVer")
+
+if [ "$REMOTE_CONTENT" != "$LOCAL_CONTENT" ]; then
+  echo "Update available"
+fi
+
+# main while
 clear
 while :; do
     echo [1] Starting server
