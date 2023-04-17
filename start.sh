@@ -14,6 +14,7 @@ clear
 REMOTE_CONTENT=$(curl -s "$updateServerVer")
 echo $REMOTE_CONTENT
 LOCAL_CONTENT=$(cat "$localServerVer")
+echo $LOCAL_CONTENT
 
 if [ "$REMOTE_CONTENT" != "$LOCAL_CONTENT" ]; then
   echo "Update available"
