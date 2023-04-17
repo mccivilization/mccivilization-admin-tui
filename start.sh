@@ -4,7 +4,7 @@
 
 updateServer="https://github.com/filip2cz/mccivilization-adminui-ssh.git"
 updateServerVer="https://raw.githubusercontent.com/filip2cz/mccivilization-adminui-ssh/main/version"
-localServerVer="~/mccivilization-adminui-ssh/version"
+localServerVer="./mccivilization-adminui-ssh/version"
 
 # code
 clear
