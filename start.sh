@@ -31,6 +31,7 @@ while :; do
     "restart" | "3")
         echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
         read -p 'Press ENTER to close this message' $null
+        clear
         ;;
     "update")
         sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
@@ -81,6 +82,7 @@ while :; do
         #EssentialsX
         if [ "$config" = "1" ]; then
             sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml
+            clear
         fi
 
         #Multiverse-Core
@@ -99,6 +101,7 @@ while :; do
             if [ "$configFile" = "0" ]; then
                 echo "canceled"
             fi
+            clear
         fi
 
         #Multiverse-Inventories
@@ -117,9 +120,11 @@ while :; do
             if [ "$configFile" = "0" ]; then
                 echo "canceled"
             fi
+            clear
         fi
         if [ "$config" = "0" ]; then
             echo canceled
+            clear
         fi
 
         #Multiverse-Portals
@@ -138,6 +143,7 @@ while :; do
             if [ "$configFile" = "0" ]; then
                 echo "canceled"
             fi
+            clear
         fi
 
         #TAB
@@ -173,6 +179,7 @@ while :; do
             if [ "$configFile" = "0" ]; then
                 echo "canceled"
             fi
+            clear
         fi
 
         #AuthMe
@@ -220,6 +227,7 @@ while :; do
             if [ "$configFile" = "0" ]; then
                 echo "canceled"
             fi
+            clear
         fi
 
         #Citizens
@@ -240,6 +248,7 @@ while :; do
             if [ "$configFile" = "3" ]; then
                 sudo nano /home/filip/mccivilization/plugins/Citizens/shops.yml
             fi
+            clear
         fi
 
         #Residence
@@ -252,6 +261,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/Residence/$configFile
             fi
+            clear
         fi
 
         #ItemJoin
@@ -264,6 +274,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/ItemJoin/$configFile
             fi
+            clear
         fi
 
         #BetterRTP
@@ -276,6 +287,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/BetterRTP/$configFile
             fi
+            clear
         fi
 
         #GWarp
@@ -288,6 +300,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/GWarp/$configFile
             fi
+            clear
         fi
 
         #Jobs
@@ -300,6 +313,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/Jobs/$configFile
             fi
+            clear
         fi
 
         #EzChestShop
@@ -312,6 +326,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/EzChestShop/$configFile
             fi
+            clear
         fi
 
         #Quests
@@ -324,6 +339,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/Quests/$configFile
             fi
+            clear
         fi
 
         #DeadChest
@@ -336,6 +352,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/DeadChest/$configFile
             fi
+            clear
         fi
 
         #SimpleScore
@@ -348,6 +365,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/SimpleScore/$configFile
             fi
+            clear
         fi
 
         #Votifier
@@ -360,6 +378,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/Votifier/$configFile
             fi
+            clear
         fi
 
         #VotingPlugin
@@ -372,6 +391,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/VotingPlugin/$configFile
             fi
+            clear
         fi
 
         #AutoMessage
@@ -384,6 +404,7 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/AutoMessage/$configFile
             fi
+            clear
         fi
 
         #ajLeaderboards
@@ -396,18 +417,21 @@ while :; do
             else
                 sudo nano /home/filip/mccivilization/plugins/ajLeaderboards/$configFile
             fi
+            clear
         fi
 
         #cancel
         if [ "$config" = "0" ]; then
             echo canceled
         fi
+        clear
         ;;
     "plugins" | "7")
         clear
         sudo echo "Plugins:"
         sudo ls /home/filip/mccivilization/plugins | grep .jar
         read -p 'Press ENTER to close this message' $null
+        clear
         ;;
     *)
         echo "Unknown number"
