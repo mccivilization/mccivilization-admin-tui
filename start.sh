@@ -34,7 +34,9 @@ while :; do
         exit
         ;;
     "ver" | "version")
+        echo -n "Version: "
         cat $localServerVer
+        echo
         ;;
     "start" | "1")
         sudo systemctl start mccivilization && echo "Server started" && read -p 'Press ENTER to close this message' $null
