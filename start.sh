@@ -456,7 +456,9 @@ while :; do
         clear
         ;;
     *)
-        echo "Unknown number"
+        echo "Unknown number / command"
+        read -p 'Press ENTER to close this message' $null
+        clear
         ;;
     esac
 done
