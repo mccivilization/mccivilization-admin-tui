@@ -7,6 +7,7 @@ updateServerVer="https://raw.githubusercontent.com/filip2cz/mccivilization-admin
 localServerVer="~/mccivilization-adminui-ssh/version"
 
 # code
+clear
 
 # autoupdate
 
@@ -18,7 +19,6 @@ if [ "$REMOTE_CONTENT" != "$LOCAL_CONTENT" ]; then
 fi
 
 # main while
-clear
 while :; do
     echo [1] Starting server
     echo [2] Stop server
