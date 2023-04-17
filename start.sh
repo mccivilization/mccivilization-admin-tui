@@ -12,6 +12,7 @@ clear
 # autoupdate
 
 REMOTE_CONTENT=$(curl -s "$updateServerVer")
+echo $REMOTE_CONTENT
 LOCAL_CONTENT=$(cat "$localServerVer")
 
 if [ "$REMOTE_CONTENT" != "$LOCAL_CONTENT" ]; then
