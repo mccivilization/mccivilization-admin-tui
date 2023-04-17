@@ -1,6 +1,5 @@
 #!/bin/bash
 clear
-echo
 while :; do
     echo [1] Starting server
     echo [2] Stop server
@@ -27,6 +26,7 @@ while :; do
         clear
         sudo systemctl status mccivilization
         read -p 'Press ENTER to close this message' $null
+        clear
         ;;
     "restart" | "3")
         echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
