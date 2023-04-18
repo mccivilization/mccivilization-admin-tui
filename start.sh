@@ -36,7 +36,7 @@ while :; do
     whoami
     echo -n "Právě je: "
     date
-    echo "-----------------------------"
+    echo "-------------------------------------"
     echo [1] Starting server
     echo [2] Stop server
     echo [3] Restart server
