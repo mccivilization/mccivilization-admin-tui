@@ -27,6 +27,7 @@ if [[ $RC -eq 0 ]]; then
     fi
 else
     echo "Error: Timeout occurred while fetching remote content."
+    echo
 fi
 
 # main while
