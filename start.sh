@@ -99,6 +99,7 @@ while :; do
         ;;
     "console" | "5")
         /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
+        clear
         ;;
     "config" | "6")
         clear
