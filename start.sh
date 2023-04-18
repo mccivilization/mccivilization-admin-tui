@@ -38,6 +38,7 @@ while :; do
     echo [5] Server console
     echo [6] Edit server and plugins config
     echo [7] Show installed plugins
+    echo [8] Change password
     echo [0] Exit
     read -p 'number: ' command
     case $command in
@@ -53,6 +54,10 @@ while :; do
         ;;
     "start" | "1")
         sudo systemctl start mccivilization && echo "Server started" && read -p 'Press ENTER to close this message' $null
+        clear
+        ;;
+    "passwd" | "8")
+        passwd && read -p 'Press ENTER to close this message' $null
         clear
         ;;
     "stop" | "2")
