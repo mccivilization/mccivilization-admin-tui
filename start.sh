@@ -32,6 +32,11 @@ fi
 
 # main while
 while :; do
+    echo -n "Vítej uživateli: "
+    whoami
+    echo -n "Právě je: "
+    date
+    echo "-----------------------------"
     echo [1] Starting server
     echo [2] Stop server
     echo [3] Restart server
