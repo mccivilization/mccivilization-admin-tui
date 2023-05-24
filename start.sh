@@ -124,6 +124,7 @@ while :; do
         echo [18] VotingPlugin
         echo [19] AutoMessage
         echo [20] ajLeaderboards
+        echo [21] HolographicDisplays
         echo "Other options:"
         echo [0] Cancel
         read -p 'what config to edit? ' config
@@ -465,6 +466,19 @@ while :; do
                 echo canceled
             else
                 sudo nano /home/filip/mccivilization/plugins/ajLeaderboards/$configFile
+            fi
+            clear
+        fi
+
+        #HolographicDisplays
+        if [ "$config" = "21" ]; then
+            clear
+            sudo ls /home/filip/mccivilization/plugins/HolographicDisplays/ | grep .yml
+            read -p "which file? " configFile
+            if [ "$configFile" = "" ]; then
+                echo canceled
+            else
+                sudo nano /home/filip/mccivilization/plugins/HolographicDisplays/$configFile
             fi
             clear
         fi
