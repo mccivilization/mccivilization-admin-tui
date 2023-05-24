@@ -235,47 +235,12 @@ while :; do
         #AuthMe
         if [ "$config" = "6" ]; then
             clear
-            echo [1] "./AuthMe/commands.yml"
-            echo [2] "./AuthMe/config.yml"
-            echo [3] "./AuthMe/email.html"
-            echo [4] "./AuthMe/messages/help_en.yml"
-            echo [5] "./AuthMe/messages/messages_en.yml"
-            echo [6] "./AuthMe/recovery_code_email.html"
-            echo [7] "./AuthMe/spawn.yml"
-            echo [8] "./AuthMe/verification_code_email.html"
-            echo [9] "./AuthMe/welcome.txt"
-
-            echo [0] "cancel"
+            sudo ls /home/filip/mccivilization/plugins/AuthMe/
             read -p "which file? " configFile
-            if [ "$configFile" = "1" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/commands.yml
-            fi
-            if [ "$configFile" = "2" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/config.yml
-            fi
-            if [ "$configFile" = "3" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/email.html
-            fi
-            if [ "$configFile" = "4" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/messages/help_en.yml
-            fi
-            if [ "$configFile" = "5" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/messages/messages_en.yml
-            fi
-            if [ "$configFile" = "6" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/recovery_code_email.html
-            fi
-            if [ "$configFile" = "7" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/spawn.yml
-            fi
-            if [ "$configFile" = "8" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/verification_code_email.html
-            fi
-            if [ "$configFile" = "9" ]; then
-                sudo nano /home/filip/mccivilization/plugins/AuthMe/welcome.txt
-            fi
-            if [ "$configFile" = "0" ]; then
-                echo "canceled"
+            if [ "$configFile" = "" ]; then
+                echo canceled
+            else
+                sudo nano /home/filip/mccivilization/plugins/AuthMe/$configFile
             fi
             clear
         fi
@@ -283,20 +248,12 @@ while :; do
         #Citizens
         if [ "$config" = "7" ]; then
             clear
-            echo [1] "./Citizens/config.yml"
-            echo [2] "./Citizens/saves.yml"
-            echo [3] "./Citizens/shops.yml"
-
-            echo [0] "cancel"
+            sudo ls /home/filip/mccivilization/plugins/Citizens/ | grep .yml
             read -p "which file? " configFile
-            if [ "$configFile" = "1" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Citizens/config.yml
-            fi
-            if [ "$configFile" = "2" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Citizens/saves.yml
-            fi
-            if [ "$configFile" = "3" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Citizens/shops.yml
+            if [ "$configFile" = "" ]; then
+                echo canceled
+            else
+                sudo nano /home/filip/mccivilization/plugins/Citizens/$configFile
             fi
             clear
         fi
