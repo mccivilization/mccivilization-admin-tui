@@ -199,35 +199,12 @@ while :; do
         #TAB
         if [ "$config" = "5" ]; then
             clear
-            echo [1] "./TAB/animations.yml"
-            echo [2] "./TAB/config.yml"
-            echo [3] "./TAB/groups.yml"
-            echo [4] "./TAB/layout.yml"
-            echo [5] "./TAB/messages.yml"
-            echo [6] "./TAB/users.yml"
-
-            echo [0] "cancel"
+            sudo ls /home/filip/mccivilization/plugins/TAB/ | grep .yml
             read -p "which file? " configFile
-            if [ "$configFile" = "1" ]; then
-                sudo nano /home/filip/mccivilization/plugins/TAB/animations.yml
-            fi
-            if [ "$configFile" = "2" ]; then
-                sudo nano /home/filip/mccivilization/plugins/TAB/config.yml
-            fi
-            if [ "$configFile" = "3" ]; then
-                sudo nano /home/filip/mccivilization/plugins/TAB/groups.yml
-            fi
-            if [ "$configFile" = "4" ]; then
-                sudo nano /home/filip/mccivilization/plugins/TAB/layout.yml
-            fi
-            if [ "$configFile" = "5" ]; then
-                sudo nano /home/filip/mccivilization/plugins/TAB/messages.yml
-            fi
-            if [ "$configFile" = "6" ]; then
-                sudo nano /home/filip/mccivilization/plugins/TAB/users.yml
-            fi
-            if [ "$configFile" = "0" ]; then
-                echo "canceled"
+            if [ "$configFile" = "" ]; then
+                echo canceled
+            else
+                sudo nano /home/filip/mccivilization/plugins/TAB/$configFile
             fi
             clear
         fi
