@@ -2,9 +2,9 @@
 
 # config
 
-updateServer="https://github.com/filip2cz/mccivilization-adminui-ssh.git"
-updateServerVer="https://raw.githubusercontent.com/filip2cz/mccivilization-adminui-ssh/main/version"
-localServerVer="./mccivilization-adminui-ssh/version"
+updateServer="https://github.com/mccivilization/mccivilization-admin-tui.git"
+updateServerVer="https://raw.githubusercontent.com/mccivilization/mccivilization-admin-tui/main/version"
+localServerVer="./mccivilization-admin-tui/version"
 
 # code
 clear
@@ -21,7 +21,7 @@ if [[ $RC -eq 0 ]]; then
     if (($(echo "$REMOTE_CONTENT") > $(echo "$LOCAL_CONTENT"))); then
         echo "Update available"
         echo "Updating"
-        sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone https://github.com/filip2cz/mccivilization-adminui-ssh.git && sudo chmod 771 ./mccivilization-adminui-ssh/* && exec ./mccivilization-adminui-ssh/start.sh
+        sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone $updateServer && sudo chmod 771 ./mccivilization-admin-tui/* && exec ./mccivilization-admin-tui/start.sh
     else
         clear
     fi
