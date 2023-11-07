@@ -104,7 +104,6 @@ while :; do
     "config" | "6")
         clear
         echo "Plugins:"
-        echo [1] EssentialsX
         echo [2] Multiverse-Core
         echo [3] Multiverse-Inventories
         echo [4] Multiverse-Portals
@@ -128,12 +127,6 @@ while :; do
         echo "Other options:"
         echo [0] Cancel
         read -p 'what config to edit? ' config
-
-        #EssentialsX
-        if [ "$config" = "1" ]; then
-            sudo nano /home/filip/mccivilization/plugins/Essentials/config.yml
-            clear
-        fi
 
         #Multiverse-Core
         if [ "$config" = "2" ]; then
