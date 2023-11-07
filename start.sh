@@ -104,7 +104,6 @@ while :; do
     "config" | "6")
         clear
         echo "Plugins:"
-        echo [2] Multiverse-Core
         echo [3] Multiverse-Inventories
         echo [4] Multiverse-Portals
         echo [5] TAB
@@ -127,25 +126,6 @@ while :; do
         echo "Other options:"
         echo [0] Cancel
         read -p 'what config to edit? ' config
-
-        #Multiverse-Core
-        if [ "$config" = "2" ]; then
-            clear
-            echo [1] "./Multiverse-Core/config.yml"
-            echo [2] "./Multiverse-Core/worlds.yml"
-            echo [0] "cancel"
-            read -p "which file? " configFile
-            if [ "$configFile" = "1" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/config.yml
-            fi
-            if [ "$configFile" = "2" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Multiverse-Core/worlds.yml
-            fi
-            if [ "$configFile" = "0" ]; then
-                echo "canceled"
-            fi
-            clear
-        fi
 
         #Multiverse-Inventories
         if [ "$config" = "3" ]; then
