@@ -104,9 +104,7 @@ while :; do
     "config" | "6")
         clear
         echo "Plugins:"
-        echo [5] TAB
         echo [6] AuthMe
-        echo [7] Citizens
         echo [8] Residence
         echo [9] ItemJoin
         echo [10] BetterRTP
@@ -130,19 +128,6 @@ while :; do
             clear
         fi
 
-        #TAB
-        if [ "$config" = "5" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/TAB/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/TAB/$configFile
-            fi
-            clear
-        fi
-
         #AuthMe
         if [ "$config" = "6" ]; then
             clear
@@ -152,19 +137,6 @@ while :; do
                 echo canceled
             else
                 sudo nano /home/filip/mccivilization/plugins/AuthMe/$configFile
-            fi
-            clear
-        fi
-
-        #Citizens
-        if [ "$config" = "7" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/Citizens/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/Citizens/$configFile
             fi
             clear
         fi
