@@ -104,7 +104,6 @@ while :; do
     "config" | "6")
         clear
         echo "Plugins:"
-        echo [4] Multiverse-Portals
         echo [5] TAB
         echo [6] AuthMe
         echo [7] Citizens
@@ -128,25 +127,6 @@ while :; do
         
         if [ "$config" = "0" ]; then
             echo canceled
-            clear
-        fi
-
-        #Multiverse-Portals
-        if [ "$config" = "4" ]; then
-            clear
-            echo [1] "./Multiverse-Portals/config.yml"
-            echo [2] "./Multiverse-Portals/portals.yml"
-            echo [0] "cancel"
-            read -p "which file? " configFile
-            if [ "$configFile" = "1" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Multiverse-Portals/config.yml
-            fi
-            if [ "$configFile" = "2" ]; then
-                sudo nano /home/filip/mccivilization/plugins/Multiverse-Portals/portals.yml
-            fi
-            if [ "$configFile" = "0" ]; then
-                echo "canceled"
-            fi
             clear
         fi
 
