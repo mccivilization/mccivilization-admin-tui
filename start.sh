@@ -21,7 +21,7 @@ if [[ $RC -eq 0 ]]; then
     if (($(echo "$REMOTE_CONTENT") > $(echo "$LOCAL_CONTENT"))); then
         echo "Update available"
         echo "Updating"
-        sudo rm -r mccivilization-adminui-ssh && echo "deleted old ver" && git clone $updateServer && sudo chmod 771 ./mccivilization-admin-tui/* && exec ./mccivilization-admin-tui/start.sh
+        sudo rm -r mccivilization-admin-tui && echo "deleted old ver" && git clone $updateServer && sudo chmod 771 ./mccivilization-admin-tui/* && exec ./mccivilization-admin-tui/start.sh
     else
         clear
     fi
