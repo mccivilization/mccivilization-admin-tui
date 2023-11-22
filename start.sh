@@ -42,9 +42,8 @@ while :; do
     echo [3] Restart server
     echo [4] Server status
     echo [5] Server console
-    echo [6] Edit server and plugins config
-    echo [7] Show installed plugins
-    echo [8] Change password
+    echo [6] Show installed plugins
+    echo [7] Change password
     echo [0] Exit
     read -p 'number: ' command
     case $command in
@@ -62,22 +61,18 @@ while :; do
         sudo systemctl start mccivilization && echo "Server started" && read -p 'Press ENTER to close this message' $null
         clear
         ;;
-    "passwd" | "8")
-        passwd && read -p 'Press ENTER to close this message' $null
-        clear
-        ;;
     "stop" | "2")
         sudo systemctl stop mccivilization && echo "Server stopped" && read -p 'Press ENTER to close this message' $null
+        clear
+        ;;
+    "restart" | "3")
+        echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
+        read -p 'Press ENTER to close this message' $null
         clear
         ;;
     "status" | "4")
         clear
         sudo systemctl status mccivilization
-        read -p 'Press ENTER to close this message' $null
-        clear
-        ;;
-    "restart" | "3")
-        echo "Restarting server..." && sudo systemctl stop mccivilization && sleep 30 && sudo systemctl start mccivilization && echo "Server restarted"
         read -p 'Press ENTER to close this message' $null
         clear
         ;;
@@ -101,211 +96,15 @@ while :; do
         /usr/local/bin/mcrcon -H 127.0.0.1 -P 20656 -p filipjebuh
         clear
         ;;
-    "config" | "6")
-        clear
-        echo "Plugins:"
-        echo [9] ItemJoin
-        echo [10] BetterRTP
-        echo [11] GWarp
-        echo [12] Jobs
-        echo [13] EzChestShop
-        echo [14] Quests
-        echo [15] DeadChest
-        echo [16] SimpleScore
-        echo [17] Votifier
-        echo [18] VotingPlugin
-        echo [19] AutoMessage
-        echo [20] ajLeaderboards
-        echo [21] HolographicDisplays
-        echo "Other options:"
-        echo [0] Cancel
-        read -p 'what config to edit? ' config
-        
-        if [ "$config" = "0" ]; then
-            echo canceled
-            clear
-        fi
-
-        #ItemJoin
-        if [ "$config" = "9" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/ItemJoin/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/ItemJoin/$configFile
-            fi
-            clear
-        fi
-
-        #BetterRTP
-        if [ "$config" = "10" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/BetterRTP/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/BetterRTP/$configFile
-            fi
-            clear
-        fi
-
-        #GWarp
-        if [ "$config" = "11" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/GWarp/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/GWarp/$configFile
-            fi
-            clear
-        fi
-
-        #Jobs
-        if [ "$config" = "12" ]; then
-            clear
-            sudo bash /home/mccivilization/mccivilization-adminui-ssh/jobs.sh
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/Jobs/$configFile
-            fi
-            clear
-        fi
-
-        #EzChestShop
-        if [ "$config" = "13" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/EzChestShop/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/EzChestShop/$configFile
-            fi
-            clear
-        fi
-
-        #Quests
-        if [ "$config" = "14" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/Quests/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/Quests/$configFile
-            fi
-            clear
-        fi
-
-        #DeadChest
-        if [ "$config" = "15" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/DeadChest/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/DeadChest/$configFile
-            fi
-            clear
-        fi
-
-        #SimpleScore
-        if [ "$config" = "16" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/SimpleScore/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/SimpleScore/$configFile
-            fi
-            clear
-        fi
-
-        #Votifier
-        if [ "$config" = "17" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/Votifier/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/Votifier/$configFile
-            fi
-            clear
-        fi
-
-        #VotingPlugin
-        if [ "$config" = "18" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/VotingPlugin/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/VotingPlugin/$configFile
-            fi
-            clear
-        fi
-
-        #AutoMessage
-        if [ "$config" = "19" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/AutoMessage/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/AutoMessage/$configFile
-            fi
-            clear
-        fi
-
-        #ajLeaderboards
-        if [ "$config" = "20" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/ajLeaderboards/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/ajLeaderboards/$configFile
-            fi
-            clear
-        fi
-
-        #HolographicDisplays
-        if [ "$config" = "21" ]; then
-            clear
-            sudo ls /home/filip/mccivilization/plugins/HolographicDisplays/ | grep .yml
-            read -p "which file? " configFile
-            if [ "$configFile" = "" ]; then
-                echo canceled
-            else
-                sudo nano /home/filip/mccivilization/plugins/HolographicDisplays/$configFile
-            fi
-            clear
-        fi
-
-        #cancel
-        if [ "$config" = "0" ]; then
-            echo canceled
-        fi
-        clear
-        ;;
-    "plugins" | "7")
+    "plugins" | "6")
         clear
         sudo echo "Plugins:"
         sudo ls /home/filip/mccivilization/plugins | grep .jar
         read -p 'Press ENTER to close this message' $null
+        clear
+        ;;
+    "passwd" | "7")
+        passwd && read -p 'Press ENTER to close this message' $null
         clear
         ;;
     *)
